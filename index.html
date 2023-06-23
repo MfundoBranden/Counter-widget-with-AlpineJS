@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine JS</title>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    
+</head>
+<body>
+    <h2>alpinejs Widget</h2>
+    <div x-data="{ title: 'Hello, Mnotho' }">
+        <p x-text="title"></p>
+         <button x-on:click="title='You are in!'">click me</button>
+         <button x-on:click="title='Thank you, continue exploring Alpine'">click back</button>
+
+         <div x-data="{ title: 'Groceries below' }">
+            <p x-text="title"></p>
+            <input type="text" x-model="title">
+        </div>  
+    </div>
+    <div x-data="{counter:0}">
+        <div x-text="counter" > </div>
+        <br>
+        <div>
+              <button class="increment" @click="counter++">Increment</button>
+              <button class="decrement" @click="counter>0 ?counter-- :0">Decrement</button>
+        </div>
+   </div>
+    <div x-data="{ count:0 }">
+        <p x-text="count"></p>
+        <button @click="count++">Count Up</button>
+        <button @click="count>0 ? count--:0">Count Down</button>
+    </div>
+
+    <div x-data="{ groceries: ['Milk', 'Eggs', 'Cheese'] }">
+        <p><strong>Groceries</strong></p>
+        <ul>
+            <template x-for="item in groceries">
+                <li x-text="item"></li>
+            </template>
+        </ul>
+    </div>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script> 
+   
+</body>
+</html>
